@@ -73,7 +73,7 @@ class App extends Component {
         <button onClick={this.rollDice}>
           Roll
         </button>
-        <div  className="message" >
+        <div className="message" >
           {this.state.message}
         </div>
       </div>
