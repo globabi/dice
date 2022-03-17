@@ -1,3 +1,11 @@
 .dice_holder{
-  border: solid red 1px;
+  display: flex;
+  width : 100%;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.blackiconcolor{
+  color: blue;
 }

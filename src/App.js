@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
+import {getDiceRollResult} from './components/GetDiceRoleResult';
 
 import {
   Dice,
-  Score,
-  Roll,
-  Message
+  Score
 } from "./components";
-
- // needs test
-const getRandomDiceRollResult = (diceSides) => {
-  return Math.floor(Math.random() * diceSides) + 1;
-}
 
 const MESSAGES = {
   draw : "Its a draw",
@@ -25,21 +19,21 @@ class App extends Component {
     this.state = {
         player: 0,
         computer: 0,
-        dice_1 : 0,
-        dice_2 : 0,
+        dice_1 : 1,
+        dice_2 : 1,
         message : "Click roll to begin"
     }
   }
 
-  rollDice = () => {
+  playAGame = () => {
 
     const diceSides = 6;
     const dice = [];
 
-    dice[0] = getRandomDiceRollResult(diceSides);
+    dice[0] = getDiceRollResult(diceSides);
     this.setState({ dice_1: dice[0]});
 
-    dice[1] = getRandomDiceRollResult(diceSides);
+    dice[1] = getDiceRollResult(diceSides);
     this.setState({ dice_2: dice[1]});
 
     let message = MESSAGES.draw;
@@ -63,14 +57,14 @@ class App extends Component {
   render(){
     return (
       <div>
+        <div className="dice_holder" >
+          <Dice thrower="You" data={this.state.dice_1} />
+          <Dice thrower="Computer" data={this.state.dice_2}  />
+        </div>
         <div>
           <Score data={this.state} />
         </div>
-        <div className="dice_holder" >
-          <Dice thrower="player_1" data={this.state.dice_1} />
-          <Dice thrower="computer" data={this.state.dice_2}  />
-        </div>
-        <button onClick={this.rollDice}>
+        <button onClick={this.playAGame}>
           Roll
         </button>
         <div className="message" >
