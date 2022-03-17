@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
 import {getDiceRollResult} from './components/GetDiceRoleResult';
+import {Dice} from "./components";
 
-import {
-  Dice,
-  Score
-} from "./components";
+const MESSAGES = require('./language/english.json');
 
-const MESSAGES = {
-  draw : "Its a draw",
-  player : "Player wins",
-  computer : "Computer Wins"
-}
-
-class App extends Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-        player: 0,
-        computer: 0,
+        player_wins: 0,
+        computer_wins: 0,
         dice_1 : 1,
         dice_2 : 1,
-        message : "Click roll to begin"
-    }
+        message : MESSAGES.click_roll
+     }
   }
 
   playAGame = () => {
@@ -39,14 +31,14 @@ class App extends Component {
     let message = MESSAGES.draw;
 
     if(dice[0] > dice[1]){
-      message = MESSAGES.player;
+      message = MESSAGES.player_wins;
       this.setState((prevState, props) => ({
-          player: prevState.player + 1
+          player_wins: prevState.player_wins + 1
       }));
     }else if(dice[0] < dice[1]){
-      message = MESSAGES.computer;
+      message = MESSAGES.computer_wins;
       this.setState((prevState, props) => ({
-          computer: prevState.computer + 1
+          computer_wins: prevState.computer_wins + 1
       }));
     }
 
@@ -57,18 +49,21 @@ class App extends Component {
   render(){
     return (
       <div>
-        <div className="dice_holder" >
-          <Dice thrower="You" data={this.state.dice_1} />
-          <Dice thrower="Computer" data={this.state.dice_2}  />
-        </div>
-        <div>
-          <Score data={this.state} />
-        </div>
-        <button onClick={this.playAGame}>
-          Roll
-        </button>
         <div className="message" >
           {this.state.message}
+        </div>
+        <div className="dice_holder" >
+          <Dice thrower={MESSAGES.you}
+            dice_roll={this.state.dice_1}
+            wins={this.state.player_wins} />
+          <Dice thrower={MESSAGES.computer}
+            dice_roll={this.state.dice_2}
+            wins={this.state.computer_wins}  />
+        </div>
+        <div className="roll_holder"  >
+          <button title={MESSAGES.click_to_roll_dice} onClick={this.playAGame}>
+            {MESSAGES.roll}
+          </button>
         </div>
       </div>
     );
@@ -76,4 +71,4 @@ class App extends Component {
 
 }
 
-export default App;
+

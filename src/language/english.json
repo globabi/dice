@@ -1,0 +1,10 @@
+{
+  "draw" : "Its a draw",
+  "player_wins" : "You win",
+  "computer_wins" : "Computer wins",
+  "click_roll" : "Click roll to begin",
+  "roll" : "Roll",
+  "you" : "You",
+  "computer" : "Computer",
+  "click_to_roll_dice" : "Click to roll dice"
+}

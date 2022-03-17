@@ -7,7 +7,8 @@ export default class Dice extends Component{
       return (
         <div>
          <div>{this.props.thrower}</div>
-         <div>{ getDiceImageIfValidNumber(this.props.data)}</div>
+         <div>{ getDiceImageIfValidNumber(this.props.dice_roll)}</div>
+         <div>Wins : {this.props.wins}</div>
        </div>
       )
     }

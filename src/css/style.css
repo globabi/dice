@@ -3,9 +3,17 @@
   width : 100%;
   justify-content: space-evenly;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .blackiconcolor{
   color: blue;
 }
+
+.message,
+.roll_holder{
+  width: 100%;
+  text-align: center;
+  margin-top: 7%;
+}
+
