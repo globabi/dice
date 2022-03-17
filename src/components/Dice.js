@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Dice = () => (
-  <div>
-    Dice
-  </div>
-);
-
-export default Dice
+export default class Dice extends Component{
+  render () {
+      return (
+        <div>
+         <div>{this.props.thrower} : {this.props.data}</div>
+       </div>
+      )
+    }
+}

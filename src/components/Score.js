@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Score = () => (
-  <div>
-    Score
-  </div>
-);
+export default class Score extends Component{
 
-export default Score
+  render () {
+      return (
+        <div>
+         <div>Player : {this.props.data.player}</div>
+         <div>Computer : {this.props.data.computer}</div>
+       </div>
+      )
+    }
+
+}
+

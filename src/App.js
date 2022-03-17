@@ -23,9 +23,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        counter : 0,
-        player_1: 0,
-        player_2: 0,
+        player: 0,
+        computer: 0,
         dice_1 : 0,
         dice_2 : 0,
         message : "Click roll to begin"
@@ -48,13 +47,12 @@ class App extends Component {
     if(dice[0] > dice[1]){
       message = MESSAGES.player;
       this.setState((prevState, props) => ({
-          player_1: prevState.player_1 + 1
+          player: prevState.player + 1
       }));
-
     }else if(dice[0] < dice[1]){
       message = MESSAGES.computer;
       this.setState((prevState, props) => ({
-          player_2: prevState.player_2 + 1
+          computer: prevState.computer + 1
       }));
     }
 
@@ -66,17 +64,16 @@ class App extends Component {
     return (
       <div>
         <div>
-          <div>Player : {this.state.player_1}</div>
-          <div>Computer : {this.state.player_2}</div>
+          <Score data={this.state} />
         </div>
         <div className="dice_holder" >
-          <div>Player Dice : {this.state.dice_1}</div>
-          <div>Computer Dice : {this.state.dice_2}</div>
+          <Dice thrower="player_1" data={this.state.dice_1} />
+          <Dice thrower="computer" data={this.state.dice_2}  />
         </div>
         <button onClick={this.rollDice}>
           Roll
         </button>
-        <div>
+        <div  className="message" >
           {this.state.message}
         </div>
       </div>
