@@ -27,7 +27,7 @@ const getDiceImageIfValidNumber = (visibleSide) => {
 
   if(numberAsString !== visibleSide){
     numberClass += numberAsString;
-    return <i className={numberClass}></i>;
+    return numberClass;
   }else{
     return visibleSide;
   }

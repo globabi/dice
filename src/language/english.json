@@ -6,5 +6,6 @@
   "roll" : "Roll Dice!",
   "you" : "You",
   "computer" : "Computer",
-  "click_to_roll_dice" : "Click to roll dice"
+  "click_to_roll_dice" : "Click to roll dice",
+  "wins" : "Wins"
 }
