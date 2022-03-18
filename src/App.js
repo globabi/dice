@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getDiceRollResult} from './components/GetDiceRoleResult';
+import getDiceRollResult from './components/GetDiceRoleResult';
 import {Dice} from "./components";
 
 const MESSAGES = require('./language/english.json');

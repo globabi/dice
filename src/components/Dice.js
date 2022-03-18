@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getDiceImageIfValidNumber from './GetDiceImageIfValidNumber';
+import getDiceImageIfValidNumber from '../components/GetDiceImageIfValidNumber';
 
 export default class Dice extends Component{
 

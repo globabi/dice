@@ -1,4 +1,4 @@
-import {getDiceRollResult} from './GetDiceRoleResult';
+import getDiceRollResult from './GetDiceRoleResult';
 
 const isResultBetweenZeroAndSevenForASixSidedDice = async () => {
   const result = getDiceRollResult(6);
