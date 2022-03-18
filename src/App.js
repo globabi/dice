@@ -49,7 +49,6 @@ export default class App extends Component {
   render(){
     return (
       <div>
-
         <div className="dice_holder" >
           <Dice thrower={MESSAGES.you}
             dice_roll={this.state.dice_1}
