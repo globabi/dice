@@ -49,9 +49,7 @@ export default class App extends Component {
   render(){
     return (
       <div>
-        <div className="message" >
-          {this.state.message}
-        </div>
+
         <div className="dice_holder" >
           <Dice thrower={MESSAGES.you}
             dice_roll={this.state.dice_1}
@@ -59,6 +57,9 @@ export default class App extends Component {
           <Dice thrower={MESSAGES.computer}
             dice_roll={this.state.dice_2}
             wins={this.state.computer_wins}  />
+        </div>
+        <div className="message" >
+          {this.state.message}
         </div>
         <div className="roll_holder"  >
           <button title={MESSAGES.click_to_roll_dice} onClick={this.playAGame}>

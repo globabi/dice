@@ -4,10 +4,11 @@
   justify-content: space-evenly;
   text-align: center;
   margin-top: 7%;
+  font-weight: bold;
 }
 
 .blackiconcolor{
-  color: blue;
+  color: #6A5ACD;
 }
 
 .message,
@@ -15,5 +16,26 @@
   width: 100%;
   text-align: center;
   margin-top: 7%;
+}
+
+.message{
+  margin-top: 3%;
+  font-weight: 600;
+}
+
+.roll_holder{
+  margin-top: 1%;
+}
+
+.roll_holder button{
+  background: #444;
+  color: #ddd;
+  border-radius: 7px;
+  font-size: 0.6em;
+  padding: 7px 28px;
+}
+
+.wins_counter{
+  font-size: 0.7em;
 }
 
