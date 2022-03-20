@@ -2,7 +2,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
-import Dice from "./App";
+import App from "./App";
 
 const MESSAGES = require('./language/english.json');
 
@@ -21,7 +21,7 @@ afterEach(() => {
 it("correctly renders default page", () => {
 
   act(() => {
-    render(<Dice />, container);
+    render(<App />, container);
     expect(container.textContent).toBe(
       MESSAGES.you +
       MESSAGES.wins +
